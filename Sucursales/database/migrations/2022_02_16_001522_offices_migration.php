@@ -13,17 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        //
+        Schema::create('offices', function(Blueprint $table){
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('img');
-            $table->string('level');
-            $table->integer('id_branch');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->integer('id_country')->unsigned();
+            $table->string('key');
             $table->timestamps();
+            $table->foreign('id_country')->references('id')->on('countries');
         });
     }
 
@@ -34,6 +30,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        //
+        Schema::dropIfExists('offices');
     }
 };
