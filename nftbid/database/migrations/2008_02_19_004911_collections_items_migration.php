@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
-            $table->id();
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamps('last_used_at')->nullable();
+        Schema::create('collections_items', function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('id_collection');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->foreign('id_nft')->references('id')->on('nfts');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('collections_items');
     }
 };
