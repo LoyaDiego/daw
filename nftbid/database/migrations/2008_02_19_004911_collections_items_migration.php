@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('collections_items', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('id_collection');
+            $table->integer('id_collection')->unsigned();
+            $table->integer('created_by')->unsigned();
+            $table->integer('id_nft')->unsigned();
             $table->foreign('created_by')->references('id')->on('users');
             $table->foreign('id_nft')->references('id')->on('nfts');
             $table->timestamps();

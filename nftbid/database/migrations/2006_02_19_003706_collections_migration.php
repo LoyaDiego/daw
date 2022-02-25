@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('collections', function(Blueprint $table){
             $table->increments('id');
+            $table->integer('created_by')->unsigned();
             $table->foreign('created_by')->references('id')->on('users');
             $table->string('name');
             $table->timestamps();

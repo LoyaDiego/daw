@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('price_history', function(Blueprint $table){
             $table->increments('id');
-            $table->foreign('id_nft')->reference('id')->on('nfts');
-            $table->integer('price');
+            $table->integer('id_nft')->unsigned();
+            $table->foreign('id_nft')->references('id')->on('nfts');
+            $table->integer('price')->unsigned();
             $table->timestamps();
         });
     }

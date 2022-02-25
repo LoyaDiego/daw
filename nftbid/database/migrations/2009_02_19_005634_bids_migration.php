@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('bids', function(Blueprint $table){
             $table->increments('id');
-            $table->foreign('id_nft')->reference('id')->on('nfts');
+            $table->integer('id_nft')->unsigned();
+            $table->integer('id_user')->unsigned();
+            $table->foreign('id_nft')->references('id')->on('nfts');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->integer('amount');
+            $table->integer('amount')->unsigned();
             $table->timestamps();
         });
     }
