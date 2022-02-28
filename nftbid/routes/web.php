@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
+});
+Route::get('/contacto',function(){
+    echo "Hola estas en contacto";
+});
+Route::get('/productos',function(){
+    $color="#fa0011";
+    $usuario="Pancho Villa en su silla";
+    $num=rand(1,50);
+   return view('front.productos')
+            ->with('colorsote',$color)
+            ->with('usuario',$usuario)
+            ->with('numero',$num);
 });
