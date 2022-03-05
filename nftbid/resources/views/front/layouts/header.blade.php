@@ -36,7 +36,7 @@
                     <!-- Logo -->
                     <div class="logo">
                         <a href="index.html">
-                            <h1>NftsBids</h1>
+                           <h1>NftsBids</h1>
                         </a>
                     </div>
                     <!--/ End Logo -->

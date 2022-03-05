@@ -1,4 +1,5 @@
 @extends('front.layouts.main',['title'=>'Productos'])
+
 @section('contenido')
-<h1>estas en productos</h1>
+    <h1>ESTAS EN PRODUCTOS</h1>
 @endsection

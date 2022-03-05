@@ -1,5 +1,7 @@
-@extends('front.layouts.main', ['title'=>'NftBids Shop'])
+@extends('front.layouts.main',['title'=>'NftsBids Shop'])
+
 @section('contenido')
+   
 	<!-- Slider Area -->
 	<section class="hero-slider">
 		<!-- Single Slider -->
@@ -1784,4 +1786,5 @@
 		</div>
 	</section>
 	<!-- End Shop Home List  -->
+	
 @endsection
